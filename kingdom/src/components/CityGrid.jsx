@@ -63,19 +63,11 @@ export default function CityGrid({ ventures, selected, onSelect }) {
             <rect x="13" y="7" width="10" height="4" rx="0.5" fill="#6a6254" />
           </pattern>
 
-          <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stopColor="#0e1018" />
-            <stop offset="100%" stopColor="#1a1810" />
-          </linearGradient>
-
           <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
-            <stop offset="45%"  stopColor="transparent" />
-            <stop offset="100%" stopColor="#0e1018" stopOpacity="0.82" />
+            <stop offset="50%"  stopColor="transparent" />
+            <stop offset="100%" stopColor="#1a2340" stopOpacity="0.75" />
           </radialGradient>
         </defs>
-
-        {/* Atmospheric background */}
-        <rect x="0" y="0" width={CANVAS_W} height={CANVAS_H + 16} fill="url(#bgGrad)" />
 
         {/* Tree clusters — painted before tiles so tiles overlap their bases */}
         <Tree cx={tlx + 20} cy={tly + 16} />
