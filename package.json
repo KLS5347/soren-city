@@ -1,0 +1,14 @@
+{
+  "name": "soren-city",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "migrate": "node scripts/migrate-json.js",
+    "build-data": "node scripts/build-data.js",
+    "dev": "npm --prefix kingdom run dev",
+    "build": "node scripts/build-data.js && npm --prefix kingdom run build"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

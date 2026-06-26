@@ -1,0 +1,78 @@
+:root {
+  /* SMG brand palette */
+  --navy: #1a2340;
+  --navy-mid: #1e2a4d;
+  --navy-light: #253360;
+  --gold: #c9a84c;
+  --gold-dim: #a07c32;
+  --gold-glow: #e8c96a;
+  --stone: #4a4238;
+  --stone-light: #6b5e50;
+  --stone-dark: #2d2a22;
+  --earth: #2d4a22;
+  --earth-dark: #1a2e14;
+  --scaffold: #c9a84c44;
+  --smoke: #b0a898;
+
+  /* Surfaces */
+  --bg: var(--navy);
+  --surface: var(--navy-mid);
+  --surface-raised: var(--navy-light);
+  --border: #2e3d6b;
+
+  /* Text */
+  --text: #e8e0d0;
+  --text-muted: #8899bb;
+  --text-dim: #556688;
+
+  /* Status colors */
+  --status-empty: #2a3a20;
+  --status-idea: #1b2f50;
+  --status-building: #3d3228;
+  --status-earning: #4a3a18;
+
+  /* Tile dimensions */
+  --tw: 96px;
+  --th: 48px;
+  --td: 36px;
+
+  /* Spacing */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 16px;
+  --sp-lg: 24px;
+  --sp-xl: 32px;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+
+  /* Transitions */
+  --transition: 200ms ease;
+
+  /* Font */
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

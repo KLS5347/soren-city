@@ -1,0 +1,6 @@
+node_modules/
+kingdom/node_modules/
+kingdom/dist/
+kingdom/public/data.json
+.DS_Store
+Thumbs.db
