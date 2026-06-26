@@ -72,7 +72,7 @@ export default function CityGrid({ ventures, selected, onSelect }) {
             <text
               key={`l-${col}-${row}`}
               x={tx + TW / 2}
-              y={ty + SVG_H + 13}
+              y={ty + SVG_H + 5}
               textAnchor="middle"
               fontSize={9}
               fill="#c9a84c"

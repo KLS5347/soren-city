@@ -11,19 +11,19 @@ const rightFace  = `M${TW/2},${TH} L${TW},${TH/2} L${TW},${TH/2+TD} L${TW/2},${T
 
 const COLORS = {
   'empty-lot': {
-    top: '#2a3d1e', left: null, right: null,
-    topStroke: '#1e2e16',
+    top: '#3a5c28', left: null, right: null,
+    topStroke: '#2a4418',
   },
   idea: {
-    top: '#1b2f50', left: null, right: null,
-    topStroke: '#2a4a7a', topDash: '6,4',
+    top: '#1e3860', left: null, right: null,
+    topStroke: '#3a5a9a', topDash: '6,4',
   },
   building: {
-    top: '#3d3228', left: '#231e18', right: '#2d2620',
-    topStroke: '#554535',
+    top: '#7d6448', left: '#4a3528', right: '#5e4333',
+    topStroke: '#9e8060',
   },
   earning: {
-    top: '#5a4620', left: '#2d2210', right: '#3d2e14',
+    top: '#a0823a', left: '#6a5018', right: '#8a6820',
     topStroke: '#c9a84c',
   },
 }
