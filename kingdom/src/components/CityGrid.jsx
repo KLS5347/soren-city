@@ -52,7 +52,7 @@ export default function CityGrid({ ventures, selected, onSelect }) {
       <svg
         className="city-grid"
         viewBox={`0 0 ${CANVAS_W} ${CANVAS_H + 16}`}
-        style={{ width: '100%', maxWidth: CANVAS_W, height: 'auto', display: 'block' }}
+        style={{ width: '100%', maxWidth: 900, height: 'auto', display: 'block' }}
       >
         <defs>
           <pattern id="cobblestone" width="24" height="12" patternUnits="userSpaceOnUse">
