@@ -57,10 +57,9 @@ export default function CityGrid({ ventures, selected, onSelect }) {
         <defs>
           <pattern id="cobblestone" width="24" height="12" patternUnits="userSpaceOnUse">
             <rect width="24" height="12" fill="#3a3530" />
-            <rect x="1"  y="1" width="10" height="4" rx="0.5" fill="#6e6458" />
-            <rect x="13" y="1" width="10" height="4" rx="0.5" fill="#726860" />
-            <rect x="1"  y="7" width="10" height="4" rx="0.5" fill="#686050" />
-            <rect x="13" y="7" width="10" height="4" rx="0.5" fill="#6a6254" />
+            {/* Isometric diamond stone — matches tile 2:1 perspective */}
+            <path d="M12,1 L23,6 L12,11 L1,6 Z" fill="#6c6254" />
+            <path d="M12,2.5 L20,6 L12,9.5 L4,6 Z" fill="#726a5e" opacity="0.4" />
           </pattern>
 
           <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
