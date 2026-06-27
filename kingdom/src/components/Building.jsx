@@ -1,7 +1,7 @@
 // Isometric building tile — SVG-based, 3 faces
 const TW = 96   // tile width
 const TH = 48   // tile height (top diamond)
-const TD = 72   // building wall depth
+const TD = 120  // building wall depth
 const TD_G = 16 // ground platform edge depth
 const SVG_H = TH + TD  // 120
 
