@@ -74,21 +74,41 @@ export default function CityGrid({ ventures, selected, onSelect }) {
         <Tree cx={trx + TW + 12} cy={try_ + 16} />
         <Tree cx={trx + TW + 32} cy={try_ + 30} scale={0.85} />
 
-        {/* Buildings layer (painter's order: back to front) */}
-        {cells.map(({ col, row, venture }) => {
-          const { x, y } = isoPos(col, row)
-          const tx = OFFSET_X + x - TW / 2
-          const ty = OFFSET_Y + y
-          return (
-            <g key={`b-${col}-${row}`} transform={`translate(${tx}, ${ty})`}>
-              <Building
-                venture={venture}
-                isSelected={venture && venture.id === selected}
-                onClick={venture ? () => onSelect(venture.id) : undefined}
-              />
-            </g>
-          )
-        })}
+        {/* Pass 1: ground tiles (empty-lot, idea) — painter's order */}
+        {cells
+          .filter(({ venture }) => !venture || venture.status === 'empty-lot' || venture.status === 'idea')
+          .map(({ col, row, venture }) => {
+            const { x, y } = isoPos(col, row)
+            const tx = OFFSET_X + x - TW / 2
+            const ty = OFFSET_Y + y
+            return (
+              <g key={`g-${col}-${row}`} transform={`translate(${tx}, ${ty})`}>
+                <Building
+                  venture={venture}
+                  isSelected={venture && venture.id === selected}
+                  onClick={venture ? () => onSelect(venture.id) : undefined}
+                />
+              </g>
+            )
+          })}
+
+        {/* Pass 2: buildings — always on top of ground tiles so back-row walls aren't covered */}
+        {cells
+          .filter(({ venture }) => venture?.status === 'building' || venture?.status === 'earning')
+          .map(({ col, row, venture }) => {
+            const { x, y } = isoPos(col, row)
+            const tx = OFFSET_X + x - TW / 2
+            const ty = OFFSET_Y + y
+            return (
+              <g key={`b-${col}-${row}`} transform={`translate(${tx}, ${ty})`}>
+                <Building
+                  venture={venture}
+                  isSelected={venture && venture.id === selected}
+                  onClick={venture ? () => onSelect(venture.id) : undefined}
+                />
+              </g>
+            )
+          })}
 
         {/* Labels layer — on top of all tiles */}
         {cells.map(({ col, row, venture }) => {
@@ -96,7 +116,7 @@ export default function CityGrid({ ventures, selected, onSelect }) {
           const { x, y } = isoPos(col, row)
           const tx = OFFSET_X + x - TW / 2
           const ty = OFFSET_Y + y
-          const label = venture.name.length > 18 ? venture.name.slice(0, 16) + '…' : venture.name
+          const label = venture.name.length > 22 ? venture.name.slice(0, 20) + '…' : venture.name
           return (
             <text
               key={`l-${col}-${row}`}
